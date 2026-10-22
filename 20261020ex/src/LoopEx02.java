@@ -15,7 +15,7 @@ public class LoopEx02 {
 		
 		// 1 ~ 10 까지의 정수의 합을 구하되 합이 30을 넘으면 중단
 		/*
-		int sum = 0;
+		int sum = 0
 		for (int i = 0; i <= 10; i++) {
 			sum += i;
 			if (sum > 30)

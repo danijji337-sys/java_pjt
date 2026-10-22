@@ -1,4 +1,4 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 public class LoopEx {
 
@@ -131,6 +131,40 @@ public class LoopEx {
 			
 		}
 		*/
+		/*
+		 * 
+		 * 
+		 *      *
+		 *     ***
+		 *    *****
+		 *   *******
+		 *  *********
+		 */
+		
+
+		int num = 1;
+		int sum = 4;
+		int num2 = 0;
+		for (int i = 0; i < 5; i++) {
+			
+			for (int j = 0; j < 9; j++) {
+				if (j < sum) {
+					System.out.print(' ');
+				} else if (num2 < num){
+					num2 += 1;
+					System.out.print('*');
+				} else {
+					System.out.print(' ');
+				}
+			}
+			num2 = 0;
+			sum--;
+			num += 2;
+			
+			System.out.println();
+			
+		}
+		/*
 		System.out.println("MON\tTUE\tWED\tTHU\tFRI\tSAT\tSUN");
 		int offset = 3;
 		int day = 1;
@@ -156,7 +190,7 @@ public class LoopEx {
 			
 			
 		}
-		
+		*/
 		
 		
 		

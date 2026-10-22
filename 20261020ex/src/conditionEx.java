@@ -157,7 +157,7 @@ public class conditionEx {
 		final int NORMAL_GRADE = 1;
 		final int VIP_GRADE = 2;
 		final int VVIP_GRADE = 3;
-		final float VVVIP_GRADE = 4.0f;
+		//final float VVVIP_GRADE = 4.0f;
 		
 		System.out.println("등급 입력: 1.NORMAL   2.VIP   3.VVIP");
 		int customerGrade = scanner.nextInt();
