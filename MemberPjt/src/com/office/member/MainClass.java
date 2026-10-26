@@ -49,9 +49,9 @@ public class MainClass {
 			
 			System.out.println("1.SIGN-UP    2.SIGN-IN    3.MODIFY    4.DELETE    99.END");
 			
-			int selecyedMenuNumber = scanner.nextInt();
+			int selecedMenuNumber = scanner.nextInt();
 						
-			switch(selecyedMenuNumber){
+			switch(selecedMenuNumber){
 			case MENU_SIGN_UP:    //SIGN-UP 회원가입
 				
 				System.out.println("Input new member ID !!");

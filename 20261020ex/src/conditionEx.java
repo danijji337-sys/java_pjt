@@ -31,7 +31,7 @@ public class conditionEx {
 		// if ~ else문 : 양자 택일
 		
 		/*
-		 * 시험 점수가 700 이상이면 합격 그렇지 않으면 불합격을 출력하자
+		 * 시험 점수가 70 이상이면 합격 그렇지 않으면 불합격을 출력하자
 		 */
 		
 		//int myScore = scanner.nextInt();

@@ -48,21 +48,22 @@ public class LoopEx {
 		*/
 		//전체 구구단 가로모드 세로모드 출력
 		/*
-		for(int i = 1; i < 10; i++) {
+		for(int i = 1; i < 4; i++) {
 			for(int j = 1; j <10; j++) {
 				System.out.printf("%d X %d = %d%n", i, j, (i*j));
 			}
 		}
-		boolean falg = true;
-		for(int i = 1; falg; i++) {
+		//boolean falg = true;
+		//for(int i = 1; falg; i++) {
 			// 계속 트루인 상태는 무한루프
 			// 방지방법 if (i >10) break; or falg = flase;
-		}
+		//}
 		
-		
+		*/
+		/*
 		for(int i = 1; i < 10; i++) {
-			for(int j = 1; j <10; j++) {
-				if(j == 9) {
+			for(int j = 1; j <4; j++) {
+				if(j == 3) {
 					System.out.printf("%d X %d = %d%n", j, i, (j*i));
 				} else {
 					System.out.printf("%d X %d = %d\t", j, i, (j*i));
@@ -141,7 +142,7 @@ public class LoopEx {
 		 *  *********
 		 */
 		
-
+		/*
 		int num = 1;
 		int sum = 4;
 		int num2 = 0;
