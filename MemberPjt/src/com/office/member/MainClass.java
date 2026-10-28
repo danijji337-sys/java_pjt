@@ -68,7 +68,7 @@ public class MainClass {
 					memberInfos = members.get(memberID);
 					int memberPwLength = memberPW.length();
 					
-					if (memberPwLength <= 8 && 20 >= memberPwLength) {
+					if (memberPwLength <= 8 || 20 <= memberPwLength) {
 						System.out.println("적합하지 않은 비밀번호 입니다");
 					} else {
 						System.out.println("Input new member MAIL!!");
@@ -114,6 +114,10 @@ public class MainClass {
 				break;
 				
 			case MENU_MODIFY:    //MODIFY 정보수정
+				
+				members.forEach((key, value) -> {
+				    System.out.println(key + " = " + value);
+				});
 				
 				System.out.println("Input member ID!!");
 				memberID = scanner.next();
