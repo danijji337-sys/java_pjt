@@ -1,5 +1,6 @@
 package com.office.member;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class MainClass {
@@ -7,63 +8,76 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		boolean dev = true;
-		
+		Config config = new Config();
+		Flag flag = new Flag();
 		MemberDB memberDB = new MemberDB();
 		MemberService memberService = new MemberService(memberDB);
 		
-		if(dev) {
+		if(config.IS_DEV) {
 			MemberDumy memberDumy = new MemberDumy(memberDB);
 			memberDumy.initMemberDumyData();
 		}
-		final int SIGN_UP = 1;
-		final int SIGN_IN = 2;
-		final int MODIFY = 3;
-		final int DELETE = 4;
-		final int MEMBER_QUERY_SERVICE = 5;
-		final int SYSTEM_OUT = 99;
+		
 		
 		// 과제 1 더미데이터 초기화는 개발환경과 실환경으로 구분해야 한다
 		
-		while (memberService.systemFlag) {
+		while (flag.systemFlag) {
 			
 			System.out.println("1.SIGN-UP    2.SIGN-IN    3.MODIFY    4.DELETE    5.MEMBER-LIST     99.SYSTEM-OUT");
 			int selectedMenu = scanner.nextInt();
 			
 			switch (selectedMenu) {
-			case SIGN_UP:
+			case Menu.MENU_SIGN_UP:
 				//memberSevice = new Memberservice();
 				memberService.doSignUp(scanner);
 				
 				break;
 				
-			case SIGN_IN:
+			case Menu.MENU_SIGN_IN :
 				//memberSevice = new Memberservice();
-				memberService.doSignIn(scanner);
-				System.out.println("현재 상태: " + memberService.systemFlag);
+				memberService.doSignIn(scanner, flag);
 				break;
 				
-			case MODIFY:
+			case Menu.MENU_MODIFY:
 				
 				memberService.doModify(scanner);
 				
 				break;
 				
-			case DELETE:
+			case Menu.MENU_DELETE:
 				
 				memberService.doDelete(scanner);
 				
 				break;
 				
-			case MEMBER_QUERY_SERVICE:
+			case Menu.MENU_PRINT_ALL_MEMBER:
 				
-				memberService.printAllMembers();
+				//memberService.printAllMembers();
+				HashMap<String, Member> db = memberDB.memberDB;
+				
+				for(String key :db.keySet()) {
+					Member member = db.get(key);
+
+		            System.out.println("회원 ID: " + member.memberId);
+		            System.out.println("비밀번호: " + member.memberPw);
+		            System.out.println("이메일: " + member.memberMail);
+		            System.out.println("전화번호: " + member.memberPhone);
+				}
+				
+				for(Member member :db.values()) {
+
+		            System.out.println("회원 ID: " + member.memberId);
+		            System.out.println("비밀번호: " + member.memberPw);
+		            System.out.println("이메일: " + member.memberMail);
+		            System.out.println("전화번호: " + member.memberPhone);
+				}
+				
 				
 				break;
 				
-			case SYSTEM_OUT:
+			case Menu.MENU_SYSTEM_OUT:
 				System.out.println("Say Good bye~");
-				memberService.systemFlag = false;
+				flag.systemFlag = false;
 				break;
 				
 			

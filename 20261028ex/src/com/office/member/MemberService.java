@@ -7,7 +7,6 @@ public class MemberService {
 	
 	// 속성 
 	MemberDB db;
-	boolean systemFlag = true;
 	int signInFail = 0;
 	// 생
 	
@@ -57,7 +56,7 @@ public class MemberService {
 		// 4 id 중복체크 기능 추가, 5 비밀번호 8~12자리 문자로 표현
 	}
 	// 로그인
-	public void doSignIn(Scanner scanner) {
+	public void doSignIn(Scanner scanner, Flag flag) {
 		System.out.println("Input member ID");
 		String memberId = scanner.next();
 		
@@ -80,7 +79,7 @@ public class MemberService {
 				
 				if (signInFail > 3) {
 					System.out.println("로그인 실패 횟수가 많아 시스템을 종료합니다.");
-					this.systemFlag = false;
+					flag.systemFlag = false;
 							
 				}
 			}
@@ -151,10 +150,10 @@ public class MemberService {
 	// 회원 탈퇴
 	public void doDelete(Scanner scanner) {
 		
-		System.out.println("Input new member ID");
+		System.out.println("Input member ID");
 		String memberId = scanner.next();
 		
-		System.out.println("Input new member PW");
+		System.out.println("Input member PW");
 		String memberPw = scanner.next();
 		
 		Member searchedMember =  db.memberDB.get(memberId);
