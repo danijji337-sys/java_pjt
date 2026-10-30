@@ -11,13 +11,17 @@ public class PayController {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Please enter the month");
-		int thisMonth = scanner.nextInt();
+		while (true) {
+			
+			System.out.println("Please enter the month");
+			int thisMonth = scanner.nextInt();
+			
+			PayService payService = new PayService();
+			payService.pay(thisMonth);
+		}
 		
-		PayService payService = new PayService();
-		payService.pay(thisMonth);
 		
-		scanner.close();
+//		scanner.close();
 		
 	}
 	
