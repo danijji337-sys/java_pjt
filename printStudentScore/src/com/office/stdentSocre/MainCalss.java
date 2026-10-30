@@ -7,14 +7,19 @@ public class MainCalss {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		boolean systemFlag = true;
+		Flag flag = new Flag();
+		StudentDB db = new StudentDB();
+		Service service = new Service(db, flag);
 		
-		while (systemFlag) {
+		while (flag.systemFlag) {
 
 			System.out.println("1.SIGN-UP    2.SIGN-IN    3.CHECK-SCORE    4.MODIFY   5.DELETE    99.SYSTEM-OUT");
 			int selectedMenu = scanner.nextInt();
+			
 			switch(selectedMenu) {
 			case 1://회원가입
+				
+				service.doSignUP(scanner, flag);
 				
 				break;
 				
@@ -35,7 +40,8 @@ public class MainCalss {
 				break;
 				
 			case 99://시스템 종료
-				
+				System.out.println("시스템 종료하시겠습니까?");
+				flag.systemFlag = false;
 				break;
 			
 			}

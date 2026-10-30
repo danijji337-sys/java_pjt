@@ -3,13 +3,17 @@ package com.office.stdentSocre;
 public class Student {
 	
 	//속성(맴버필드)
-	String schoolName = "DW고등학교";
+	String schoolName = "1111";
 	String studentID;
 	String studentPW;
 	int korean1Score;
 	int korean2Score;
 	int english1Score;
 	int english2Score;
+	
+	public Student() {
+
+	}
 	
 	public Student(
 			String studentID, 
