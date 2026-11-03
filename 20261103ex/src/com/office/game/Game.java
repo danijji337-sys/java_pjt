@@ -26,10 +26,10 @@ public class Game {
 
 
 	public void move(int x, int y) {
-		bear.walk(x, y);
-		robot.run(x, y);
-		dog.run(x, y);
-		airPlain.fly(x, y);
+		for (int i = 0; i < iCharactors.length; i++) {
+			iCharactors[i].run(x, y);
+		}
+		
 	}
 	
 	
