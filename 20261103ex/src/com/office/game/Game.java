@@ -32,4 +32,6 @@ public class Game {
 		airPlain.fly(x, y);
 	}
 	
+	
+	
 }
