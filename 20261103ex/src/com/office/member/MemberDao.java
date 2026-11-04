@@ -36,6 +36,26 @@ public class MemberDao {
 		
 	}
 
-	
+	public MemberDto deleteMemberByMemIdMemPw(MemberDto memberDto) {
+		
+		MemberDto dto = db.get(memberDto.getMemId());
+		
+		if (dto != null && dto.getMemPw().equals(memberDto.getMemPw())) {
+			MemberDto deletedMemberdto = db.remove(memberDto.getMemId());
+			
+			if (deletedMemberdto != null) {
+				return deletedMemberdto;
+				
+			} else {
+				return null;
+				
+			}
+			
+		} else {
+				return null;
+				
+			}
+		
+	}
 
 }

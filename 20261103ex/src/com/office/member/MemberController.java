@@ -66,7 +66,21 @@ public class MemberController implements MemberConfig{
 				break;
 				
 			case DELETE:
-				memberService.delet();
+				/*
+				 * ID & PW 인증 후 삭제
+				 */
+				
+				System.out.println("Input member ID");
+				memId = scanner.next();
+				
+				System.out.println("Input member PW");
+				memPw = scanner.next();
+				
+				memberDto = new MemberDto();
+				memberDto.setMemId(memId);
+				memberDto.setMemPw(memPw);
+				
+				memberService.delete(memberDto);
 				break;
 				
 			case SYSTEM_OUT:				

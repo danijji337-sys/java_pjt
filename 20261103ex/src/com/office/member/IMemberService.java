@@ -5,7 +5,7 @@ public interface IMemberService {
 	public void signUp(MemberDto memberDto); 
 	public void signIn(MemberDto memberDto);
 	public void modipy();
-	public void delet();
+	public void delete(MemberDto memberDto);
 	
 	
 }
