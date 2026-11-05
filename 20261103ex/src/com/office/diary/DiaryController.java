@@ -22,9 +22,20 @@ public class DiaryController implements IDiaryConfig{
 			
 			case DIARY_WRITE:
 				
+				scanner.nextLine();
+				
+				System.out.println("INPUT NEW DIARY TEXT");
+				String txt = scanner.nextLine();
+				
+				DiaryDto diaryDto = new DiaryDto(txt);
+				
+				diaryService.WriteNewDiary(diaryDto);
+				
 				break;
 				
 			case DIARY_READ:
+				
+				diaryService.readDiary();
 				
 				break;
 				
