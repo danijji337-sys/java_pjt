@@ -10,7 +10,7 @@ public class MemberContainer {
 	
 	private MemberContainer() {}
 		
-	public static MemberContainer getinstance() {
+	public static MemberContainer getInstance() {
 		if(memberContainer == null) {
 			memberContainer = new MemberContainer();
 			

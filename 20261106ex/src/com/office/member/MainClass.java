@@ -4,6 +4,10 @@ public class MainClass {
 
 	public static void main(String[] args) {
 		
+		MemberContainer.getInstance()
+		.getMEMBER_CONTROLLER()
+		.execute();
+		
 	}
 	
 }
