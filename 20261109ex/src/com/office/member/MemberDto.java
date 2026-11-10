@@ -7,7 +7,6 @@ public class MemberDto {
 	private String memMail;
 	private String memPhone;
 	
-	
 	public MemberDto() { }
 
 
